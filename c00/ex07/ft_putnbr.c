@@ -1,21 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 22:59:48 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/09/21 19:01:26 by mokhaldi         ###   ########.fr       */
+/*   Created: 2023/09/21 19:19:17 by mokhaldi          #+#    #+#             */
+/*   Updated: 2023/09/21 22:55:59 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
-void	ft_is_negative(int n)
+void	ft_putchar(char c)
 {
-	if (n >= 0)
-		write(1, "N", 1);
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10 + '0');
+		ft_putchar(nb % 10 + '0');
+	}
+	if (nb == -2147483648)
+	{
+		write(1, "2147483648", 11);
+	}
 	else
-		write(1, "P", 1);
+		ft_putchar(nb + '0');
+}
+
+int	main(void)
+{
+	ft_putnbr(4565);
+	return (0);
 }
