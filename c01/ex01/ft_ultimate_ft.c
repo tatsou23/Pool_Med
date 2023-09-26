@@ -12,8 +12,5 @@
 
 void	ft_ultimate_ft(int *********nbr)
 {
-	int	a;
-
-	nbr = &a;
-	*nbr = 42;
+	*********nbr = 42;
 }
