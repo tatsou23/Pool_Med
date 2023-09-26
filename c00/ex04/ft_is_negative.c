@@ -6,7 +6,7 @@
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 22:59:48 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/09/21 19:01:26 by mokhaldi         ###   ########.fr       */
+/*   Updated: 2023/09/27 00:21:12 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_is_negative(int n)
 {
-	if (n >= 0)
+	if (n < 0)
 		write(1, "N", 1);
 	else
 		write(1, "P", 1);

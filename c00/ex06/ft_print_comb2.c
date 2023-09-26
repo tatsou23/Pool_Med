@@ -6,11 +6,16 @@
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 01:39:16 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/09/23 23:09:40 by mokhaldi         ###   ########.fr       */
+/*   Updated: 2023/09/27 00:23:23 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_print_comb2(void)
 {

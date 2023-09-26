@@ -6,7 +6,7 @@
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:02:08 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/09/21 19:12:04 by mokhaldi         ###   ########.fr       */
+/*   Updated: 2023/09/27 00:16:07 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_numbers(void)
 	a = '0';
 	while (a <= '9')
 	{
-		ft_putchar(a);
+		write(1, &a, 1);
 		a++;
 	}
 }
