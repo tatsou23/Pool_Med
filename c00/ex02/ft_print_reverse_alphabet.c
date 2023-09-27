@@ -6,7 +6,7 @@
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:28:08 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/09/27 00:15:37 by mokhaldi         ###   ########.fr       */
+/*   Updated: 2023/09/27 01:41:41 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	ft_print_reverse_alphabet(void)
 		write(1, &x, 1);
 		x--;
 	}
-	write(1, "\n", 1);
 }
