@@ -6,11 +6,11 @@
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 21:29:45 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/09/26 21:30:35 by mokhaldi         ###   ########.fr       */
+/*   Updated: 2023/09/27 00:42:05 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_ft(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
 	int	swaper;
 
