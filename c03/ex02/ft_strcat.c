@@ -6,10 +6,25 @@
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 07:57:19 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/09/28 08:05:19 by mokhaldi         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:41:57 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *dest, char *src)
 {
+	char	*tmp;
+
+	tmp = dest;
+	while (*tmp != '\0')
+	{
+		tmp++;
+	}
+	while (*src != '\0')
+	{
+		*tmp = *src;
+		src++;
+		tmp++;
+	}
+	*tmp = '\0';
+	return (dest);
 }

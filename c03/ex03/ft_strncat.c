@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 22:35:15 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/09/28 06:22:36 by mokhaldi         ###   ########.fr       */
+/*   Created: 2023/09/28 11:42:55 by mokhaldi          #+#    #+#             */
+/*   Updated: 2023/09/28 12:00:55 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_charupcase(char c)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
-}
+	char	*tmp;
 
-char	*ft_strupcase(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
+	tmp = dest;
+	while (*tmp != '\0')
 	{
-		str[i] = ft_charupcase(str[i]);
-		i++;
+		tmp++;
 	}
-	return (str);
+	while (*src != '\0' && nb > 0)
+	{
+		*tmp = *src;
+		src++;
+		tmp++;
+		nb--;
+	}
+	*tmp = '\0';
+	return (dest);
 }
