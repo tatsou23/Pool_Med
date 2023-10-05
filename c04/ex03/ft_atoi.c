@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 07:51:24 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/10/04 19:46:10 by mokhaldi         ###   ########.fr       */
+/*   Created: 2023/10/05 00:26:08 by mokhaldi          #+#    #+#             */
+/*   Updated: 2023/10/05 01:12:50 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_atoi(char *str)
 {
-	unsigned int	i;
+	int	i;
+	int	sing;
+	int	result;
 
 	i = 0;
-	while ((s1[i] || s2[i]) && (i < n))
+	sing = 1;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 	{
-		if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
 		i++;
 	}
-	return (0);
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sing *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result *= 10;
+		result = result + (str[i] - '0');
+		i++;
+	}
+	return (sing * result);
 }

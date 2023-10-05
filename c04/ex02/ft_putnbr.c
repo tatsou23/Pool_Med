@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 07:51:24 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/10/04 19:46:10 by mokhaldi         ###   ########.fr       */
+/*   Created: 2023/10/04 19:57:15 by mokhaldi          #+#    #+#             */
+/*   Updated: 2023/10/04 20:43:42 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int	i;
+#include <unistd.h>
 
-	i = 0;
-	while ((s1[i] || s2[i]) && (i < n))
+void	ft_putnbr(int nb)
+{
+	char			c;
+	unsigned int	n;
+
+	if (nb < 0)
 	{
-		if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
-		i++;
+		write(1, "-", 1);
+		n = -nb;
 	}
-	return (0);
+	else
+		n = nb;
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	c = n % 10 + '0';
+	write(1, &c, 1);
 }
