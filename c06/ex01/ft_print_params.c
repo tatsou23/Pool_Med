@@ -6,6 +6,28 @@
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 02:20:23 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/10/05 02:26:23 by mokhaldi         ###   ########.fr       */
+/*   Updated: 2023/10/05 02:54:58 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
+
+int	main(int ac, char **av)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < ac)
+	{
+		j = 0;
+		while (av[i][j] != '\0')
+		{
+			write(1, &av[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
+		i++;
+	}
+	return (0);
+}
