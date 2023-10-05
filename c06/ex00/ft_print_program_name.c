@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mokhaldi <mokhaldi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 19:57:15 by mokhaldi          #+#    #+#             */
-/*   Updated: 2023/10/05 18:19:24 by mokhaldi         ###   ########.fr       */
+/*   Created: 2023/10/05 01:48:13 by mokhaldi          #+#    #+#             */
+/*   Updated: 2023/10/05 02:18:40 by mokhaldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+int	main(int ac, char **av)
 {
-	char			c;
-	unsigned int	n;
+	int	i;
 
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		n = -nb;
-	}
-	else
-		n = nb;
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	c = n % 10 + '0';
-	write(1, &c, 1);
+	i = 0;
+	if (ac == 1)
+		while (av[0][i] != '\0')
+		{
+			write(1, &av[0][i], 1);
+			i++;
+		}
+	return (0);
 }
